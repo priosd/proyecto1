@@ -5,7 +5,7 @@ USE bd_bolsa;
 CREATE TABLE vacante(
 id INT PRIMARY key AUTO_INCREMENT,
 fechaPublicacion DATE,
-nombre VARCHAR(25),
+nombre VARCHAR(50),
 descripcion TEXT,
 detalle TEXT 
 );
