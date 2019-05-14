@@ -9,3 +9,9 @@ nombre VARCHAR(25),
 descripcion TEXT,
 detalle TEXT 
 );
+
+INSERT INTO vacante (fechaPublicacion,nombre,descripcion,detalle) VALUES ('2019-06-01',"Analista en Excel","Elaboración de macros y tablas dinámicas.","Manejo de Excel a nivel intermedio/avanzado - Macros.");
+INSERT INTO vacante (fechaPublicacion,nombre,descripcion,detalle) VALUES ('2019-07-11',"ASISTENTE CONTABLE","Pago de detracciones.","Gestión, control y conformación de facturas de acreedores.");
+INSERT INTO vacante (fechaPublicacion,nombre,descripcion,detalle) VALUES ('2019-05-21',"Mesa de Ayuda","Seguimiento del proceso de escalado.","Instalación de equipos de Comunicaciones de red datos y voz.");
+INSERT INTO vacante (fechaPublicacion,nombre,descripcion,detalle) VALUES ('2019-06-10',"Analista de sistemas","Gestión de procesos.","Bases de datos SQL, ORACLE, MySQL intermedio.");
+INSERT INTO vacante (fechaPublicacion,nombre,descripcion,detalle) VALUES ('2019-06-08',"Ingeniero civil o arquitecto","conocimiento de autocad.","orientación al logro de resultados.");
