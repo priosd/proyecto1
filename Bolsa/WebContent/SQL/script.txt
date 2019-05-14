@@ -1,0 +1,11 @@
+CREATE DATABASE bd_bolsa;
+
+USE bd_bolsa;
+
+CREATE TABLE vacante(
+id INT PRIMARY key AUTO_INCREMENT,
+fechaPublicacion DATE,
+nombre VARCHAR(25),
+descripcion TEXT,
+detalle TEXT 
+);
