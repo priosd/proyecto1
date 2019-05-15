@@ -59,6 +59,30 @@ public class VacanteDAO {
 		
 	}
 	
+	public List<Vacante> getAll(){
+		try {
+			String sql="select * from vacante order by id desc";
+			PreparedStatement preparedStatement = conn.getConnection().prepareStatement(sql);
+			ResultSet rs= preparedStatement.executeQuery();
+			List<Vacante> list = new ArrayList<>();
+//			List<VacanteDAO> list = new LinkedList<>();
+			Vacante vacante;
+			while(rs.next()) {
+				vacante = new Vacante(rs.getInt("id"));
+				vacante.setFechaPublicacion(rs.getDate("fechaPublicacion"));
+				vacante.setNombre(rs.getString("nombre"));
+				vacante.setDescripcion(rs.getString("descripcion"));
+				vacante.setDetalle(rs.getString("detalle"));
+				list.add(vacante);
+			}
+			return list;
+		} catch (SQLException e) {
+			System.out.println("Error VacanteDao.getAll: "+e.getMessage());
+			return null;
+		}
+		
+	}
+	
 	public Vacante getById (int idVacante) {
 		try {
 			String sql = "select * from vacante where id=? limit 1";

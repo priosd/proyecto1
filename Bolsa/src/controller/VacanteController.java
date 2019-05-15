@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -38,8 +39,12 @@ public class VacanteController extends HttpServlet {
     		//realizamos un metodo y le pasamos como parametro
     		//el mismo objeto request y response que llego con la solicitud
     		this.verDetalle(request,response);
+    	}if(action.equals("lista")) {
+    		this.verTodas(request,response);
     	}
     }
+    
+    
     protected void verDetalle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	int idVacante = Integer.parseInt(request.getParameter("id"));
     	DbConnection conn= new DbConnection();
@@ -52,6 +57,16 @@ public class VacanteController extends HttpServlet {
     	rd.forward(request, response);	
     }
 
+    protected void verTodas(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	DbConnection conn= new DbConnection();
+    	VacanteDAO vacanteDao= new VacanteDAO(conn);
+    	List<Vacante> lista = vacanteDao.getAll();
+    	conn.disconnect();
+    	request.setAttribute("vacantes", lista);
+    	RequestDispatcher rd;
+    	rd=request.getRequestDispatcher("/vacantes.jsp");
+    	rd.forward(request, response);	
+    }
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// recibir parametros

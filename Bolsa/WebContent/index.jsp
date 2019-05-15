@@ -15,10 +15,16 @@
   <li> Administracion </li>
   <li> Acerca </li>
 </ul>
+
+
 <form action="buscar" method="post">
 	<input type="text" placeholder="buscar oferta">
 	<input type="submit" value="buscar">
 </form>
+	
+	<p><a href="vacante?action=lista">Más ofertas</a></p>
+
+
 <br>
 
 	<c:forEach items="${ultimas}" var="vacants" varStatus="status"> 
