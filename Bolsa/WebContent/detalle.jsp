@@ -3,17 +3,88 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Small Business - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+<link href="css/small-business.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 <title>Insert title here</title>
+  
+      
 </head>
+
 <body>
-<div id="detalle_vacante">
-<h5><b>Vacante: </b>${vacante.nombre}</h5>
-<h5><b>Publicado el:</b>${vacante.fechaPublicacion}</h5>
-<b>descripcion: </b><br />
-<p>${vacante.descripcion}</p>
-<b>Detalles de la vacante</b><br />
-${vacante.detalle}
-</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Bienvenido</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Inicio
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Administracion</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Acerca</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+<br /><br />
+  <div class="container">
+<div class="row">
+ <!-- Content Row -->
+    
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title">Detalle</h2>
+            <p class="card-text">ID: ${vacante.id} <br /> Vacante: ${vacante.nombre} <br /> Descripcion: ${vacante.descripcion} <br /> Detalle: ${vacante.detalle}</p>
+
+          </div>
+         <div class="card-footer">
+            <a href="homePage" class="btn btn-primary btn-sm">Inicio</a>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+      
+      </div>
+    <!-- /.row -->
+    
+
+  </div>
+
+  <!-- /.container -->
+  
+  <div id="footer">
+ <footer class="py-5 bg-dark" >
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+	</div>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
