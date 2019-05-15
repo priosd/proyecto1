@@ -83,6 +83,33 @@ public class VacanteDAO {
 		
 	}
 	
+	public List<Vacante> getByQuery(String query){
+		try {
+			String sql="select * from vacante where (descripcion like ? or nombre like ?) order by id desc";
+			PreparedStatement preparedStatement = conn.getConnection().prepareStatement(sql);
+			//pasamos como parametro en la posicion 1 y 2 la misma cadena
+			preparedStatement.setString(1, "%" +query+ "%");
+			preparedStatement.setString(2, "%" +query+ "%");
+			ResultSet rs= preparedStatement.executeQuery();
+			List<Vacante> list = new ArrayList<>();
+//			List<VacanteDAO> list = new LinkedList<>();
+			Vacante vacante;
+			while(rs.next()) {
+				vacante = new Vacante(rs.getInt("id"));
+				vacante.setFechaPublicacion(rs.getDate("fechaPublicacion"));
+				vacante.setNombre(rs.getString("nombre"));
+				vacante.setDescripcion(rs.getString("descripcion"));
+				vacante.setDetalle(rs.getString("detalle"));
+				list.add(vacante);
+			}
+			return list;
+		} catch (SQLException e) {
+			System.out.println("Error VacanteDao.getByQuery: "+e.getMessage());
+			return null;
+		}
+		
+	}
+	
 	public Vacante getById (int idVacante) {
 		try {
 			String sql = "select * from vacante where id=? limit 1";

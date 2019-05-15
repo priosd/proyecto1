@@ -7,9 +7,9 @@
 </head>
 <body>
 <div id="detalle_vacante">
-<h5><b>Vacante</b>${vacante.nombre}</h5>
-<h5><b>Publicado</b>${vacante.fechaPublicacion}</h5>
-<b>descripcion</b><br />
+<h5><b>Vacante: </b>${vacante.nombre}</h5>
+<h5><b>Publicado el:</b>${vacante.fechaPublicacion}</h5>
+<b>descripcion: </b><br />
 <p>${vacante.descripcion}</p>
 <b>Detalles de la vacante</b><br />
 ${vacante.detalle}

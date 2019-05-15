@@ -22,7 +22,7 @@
 			<td>${vacante.nombre}</td>
 			<td>${vacante.fechaPublicacion}</td>
 			<td>
-			<a href="#">Ver detalles</a>
+			<a href="vacante?action=ver&id=${vacante.id}">Ver detalles</a>
 			<a href="#">Eliminar</a>
 			</td>
 		</tr>
