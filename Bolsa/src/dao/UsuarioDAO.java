@@ -15,7 +15,8 @@ public class UsuarioDAO {
 	
 	public Usuario login(String user, String pass) {
 		try {
-			String sql="select * from usuario where username=? and password = md5(?) and estatus='activo' limit 1";
+			String sql="select * from usuario where username like ? and pass like md5(?) and estatus like 'activo' limit 1";
+			
 			PreparedStatement preparedStatement = conn.getConnection().prepareStatement(sql);
 			preparedStatement.setString(1, user);
 			preparedStatement.setString(2, pass);
@@ -24,9 +25,11 @@ public class UsuarioDAO {
 			while(rs.next()) {
 				usuario.setId(rs.getInt("id"));
 				usuario.setNombre(rs.getString("nombre"));
+				usuario.setApePaterno(rs.getString("apellido_paterno"));
+				usuario.setApematerno(rs.getString("apellido_materno"));
 				usuario.setEmail(rs.getString("email"));
 				usuario.setUsername(rs.getString("username"));
-				usuario.setPassword(rs.getString("password"));
+				usuario.setPassword(rs.getString("pass"));
 				usuario.setPerfil(rs.getString("perfil"));
 				usuario.setEstatus(rs.getString("estatus"));
 			}

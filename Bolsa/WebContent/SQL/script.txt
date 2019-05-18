@@ -15,3 +15,17 @@ INSERT INTO vacante (fechaPublicacion,nombre,descripcion,detalle) VALUES ('2019-
 INSERT INTO vacante (fechaPublicacion,nombre,descripcion,detalle) VALUES ('2019-05-21',"Mesa de Ayuda","Seguimiento del proceso de escalado.","Instalación de equipos de Comunicaciones de red datos y voz.");
 INSERT INTO vacante (fechaPublicacion,nombre,descripcion,detalle) VALUES ('2019-06-10',"Analista de sistemas","Gestión de procesos.","Bases de datos SQL, ORACLE, MySQL intermedio.");
 INSERT INTO vacante (fechaPublicacion,nombre,descripcion,detalle) VALUES ('2019-06-08',"Ingeniero civil o arquitecto","conocimiento de autocad.","orientación al logro de resultados.");
+
+CREATE TABLE usuario(
+id INT PRIMARY KEY AUTO_INCREMENT,
+nombre VARCHAR(100),
+apellido_paterno VARCHAR(100),
+apellido_materno VARCHAR(100),
+email VARCHAR(100),
+username VARCHAR(30),
+pass VARCHAR(50),
+perfil VARCHAR(50),
+estatus VARCHAR(20)
+);
+
+INSERT INTO usuario (nombre,apellido_paterno,apellido_materno,email,username,pass,perfil,estatus) VALUES ("Petter","Rios","Donayre","priosdonayre@gmail.com",'admin',MD5('123456'),"administrador","activo");

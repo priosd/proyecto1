@@ -31,12 +31,11 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Inicio
-              <span class="sr-only">(current)</span>
+            <a class="nav-link" href="homePage">Inicio
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Administracion</a>
+            <a class="nav-link" href="admin?action=login">Administracion</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Acerca</a>
@@ -48,7 +47,9 @@
 
 
 <br /><br />
+  
   <div class="container">
+
 <div class="row">
  <!-- Content Row -->
     
@@ -56,12 +57,12 @@
         <div class="card h-100">
           <div class="card-body">
             <h2 class="card-title">Detalle</h2>
-            <p class="card-text">ID: ${vacante.id} <br /> Vacante: ${vacante.nombre} <br /> Descripcion: ${vacante.descripcion} <br /> Detalle: ${vacante.detalle}</p>
+            <p class="card-text">Vacante: ${vacante.nombre} <br /> Descripcion: ${vacante.descripcion} <br /> Detalle: ${vacante.detalle}</p>
 
           </div>
          <div class="card-footer">
-            <a href="homePage" class="btn btn-primary btn-sm">Inicio</a>
-          </div>
+             <a href="vacante?action=lista" class="btn btn-primary btn-sm">Ver todas las ofertas</a>
+          </div>      
         </div>
       </div>
       <!-- /.col-md-4 -->

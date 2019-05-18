@@ -3,6 +3,8 @@ package model;
 public class Usuario {
 	private int id;
 	private String nombre;
+	private String apePaterno;
+	private String apematerno;
 	private String email;
 	private String username;
 	private String password;
@@ -54,11 +56,27 @@ public class Usuario {
 	public void setEstatus(String estatus) {
 		this.estatus = estatus;
 	}
+	
+	public String getApePaterno() {
+		return apePaterno;
+	}
+	public void setApePaterno(String apePaterno) {
+		this.apePaterno = apePaterno;
+	}
+	public String getApematerno() {
+		return apematerno;
+	}
+	public void setApematerno(String apematerno) {
+		this.apematerno = apematerno;
+	}
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nombre=" + nombre + ", email=" + email + ", username=" + username
-				+ ", password=" + password + ", perfil=" + perfil + ", estatus=" + estatus + "]";
+		return "Usuario [id=" + id + ", nombre=" + nombre + ", apePaterno=" + apePaterno + ", apematerno=" + apematerno
+				+ ", email=" + email + ", username=" + username + ", password=" + password + ", perfil=" + perfil
+				+ ", estatus=" + estatus + "]";
 	}
+	
+	
 	
 	
 }

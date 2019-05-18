@@ -20,7 +20,6 @@ import model.Vacante;
 @WebServlet("/homePage")
 public class SiteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
     public SiteController() {
         super();
     }

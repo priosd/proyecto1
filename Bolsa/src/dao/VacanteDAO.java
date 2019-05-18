@@ -131,5 +131,18 @@ public class VacanteDAO {
 			return null;
 		}
 	}
+	
+	public int delete (int idVacante) {
+		try {
+			String sql = "delete from vacante where id = ?";
+			PreparedStatement preparedStatement = conn.getConnection().prepareStatement(sql);
+			preparedStatement.setInt(1, idVacante);
+			int rows = preparedStatement.executeUpdate();
+			return rows;
+		}catch(SQLException e){
+			System.out.println("Error vacanteDao.eliminar: "+e.getMessage());
+			return 0;
+		}
+	}
 
 }
